@@ -1,0 +1,86 @@
+
+
+public class BubbeSort{
+
+	
+	public static void bubbleSort01(int[] arry) {
+		for (int i = 0; i < arry.length-1; i++) {
+			for (int j = 0; j < arry.length - 1 - i; j++) {
+				if (arry[j] > arry[j + 1]) {
+					int temp;
+					temp = arry[j + 1];
+					arry[j + 1] = arry[j];
+					arry[j] = temp;
+				}
+			}
+		}
+	}
+
+	
+	public static void bubbleSort02(int[] arry) {
+		boolean flag;
+		for (int i = 0; i < arry.length-1; i++) {
+			flag = true;
+			for (int j = 0; j < arry.length - 1 - i; j++) {
+				if (arry[j] > arry[j + 1]) {
+					int temp;
+					temp = arry[j + 1];
+					arry[j + 1] = arry[j];
+					arry[j] = temp;
+					flag = false;
+				}
+			}
+			if (flag) {
+				break;
+			}
+		}
+	}
+
+	
+	public static void bubbleSort03(int[] arry) {
+		int swapIndex = 0;
+		int sortedLength = 0;
+		for (int i = 0; i < arry.length-1; i++) {
+			for (int j = 0; j < arry.length - 1 - sortedLength; j++) {
+				if (arry[j] > arry[j + 1]) {
+					int temp;
+					temp = arry[j + 1];
+					arry[j + 1] = arry[j];
+					arry[j] = temp;
+					swapIndex = j;
+
+	
+	}
+			}
+			sortedLength = (arry.length - 1 - swapIndex);
+			if (swapIndex == 0) {
+				break;
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		int arry[] = { 3, 2, 6, 8, 1, 9, 5 };
+		bubbleSort01(arry);
+
+		for (int i = 0; i < arry.length; i++) {
+			System.out.print(arry[i] + " ");
+		}
+	}
+
+} 
+
+
+
+
+package wdad;
+import static org.junit.Assert.*;
+import java.util.Arrays;
+import org.junit.Test;
+public class BubbleSortTestTest {
+	@Test public void test() {
+		int[] arr={12,6,4,8,3};  
+		BubbleSort.mpPx(arr)；
+	system.out.println(Arrays.toString(arr));
+	}
+}
